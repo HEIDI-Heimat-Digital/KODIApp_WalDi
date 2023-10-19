@@ -59,6 +59,8 @@
   "value_not_username": "value_not_username",
   "value_not_valid_password": "Input not valid password",
   "value_not_date_empty": "Input for date empty. Please enter a start and end date",
+  "value_desc_limit_exceeded":"Description should not exceed 65535 characters.",  
+  "value_user_desc_limit_exceeded":"Description should not exceed 255 characters.",
   "value_not_valid_id": "Input not valid ID",
   "edit_profile": "Edit Profile",
   "Password is required": "Password is required.",

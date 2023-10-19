@@ -726,7 +726,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         );
       }
 
-      if (product.endDate.isNotEmpty) {
+      if (product.endDate.isNotEmpty || product.endDate != "") {
         endDate = Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[

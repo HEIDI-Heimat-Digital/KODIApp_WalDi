@@ -256,7 +256,7 @@ class ListRepository {
       }
     }
 
-    if (endDate != null) {
+    if (endDate != null && endDate != "") {
       String formattedTime;
       if (endTime!.hour < 10) {
         formattedTime =
@@ -345,7 +345,7 @@ class ListRepository {
       }
     }
 
-    if (endDate != null) {
+    if (endDate != null && endDate != "") {
       String formattedTime;
       if (endTime!.hour < 10) {
         formattedTime =

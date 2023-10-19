@@ -68,7 +68,6 @@ class _AddListingScreenState extends State<AddListingScreen> {
   String? _errorWebsite;
   String? _errorStatus;
   String? _errorSDate;
-  String? _errorEDate;
   String? _errorCategory;
   String? selectedCity;
   int? cityId;
@@ -509,8 +508,8 @@ class _AddListingScreenState extends State<AddListingScreen> {
     _errorTitle =
         UtilValidator.validate(_textTitleController.text, allowEmpty: false);
 
-    if (_textContentController.text.length >= 10001) {
-      _errorContent = "Info should not exceed 1000 characters.";
+    if (_textContentController.text.length >= 65535) {
+      _errorContent = "value_desc_limit_exceeded";
     } else {
       _errorContent = UtilValidator.validate(_textContentController.text,
           allowEmpty: false);
@@ -521,12 +520,6 @@ class _AddListingScreenState extends State<AddListingScreen> {
         _errorSDate = "value_not_date_empty";
       } else {
         _errorSDate = null;
-      }
-
-      if (_endDate == null || _endDate == "" || _endTime == null) {
-        _errorEDate = "value_not_date_empty";
-      } else {
-        _errorEDate = null;
       }
     }
 
@@ -539,7 +532,6 @@ class _AddListingScreenState extends State<AddListingScreen> {
       _errorWebsite,
       _errorStatus,
       _errorSDate,
-      _errorEDate,
     ];
 
     if (_errorTitle != null ||
@@ -549,8 +541,7 @@ class _AddListingScreenState extends State<AddListingScreen> {
         _errorEmail != null ||
         _errorWebsite != null ||
         _errorStatus != null ||
-        _errorSDate != null ||
-        _errorEDate != null) {
+        _errorSDate != null) {
       String errorMessage = "";
       for (var element in errors) {
         if (element != null &&
@@ -1121,15 +1112,6 @@ class _AddListingScreenState extends State<AddListingScreen> {
                           .textTheme
                           .titleMedium!
                           .copyWith(fontWeight: FontWeight.bold),
-                      children: const <TextSpan>[
-                        TextSpan(
-                          text: ' *',
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -1154,15 +1136,6 @@ class _AddListingScreenState extends State<AddListingScreen> {
                           .textTheme
                           .titleMedium!
                           .copyWith(fontWeight: FontWeight.bold),
-                      children: const <TextSpan>[
-                        TextSpan(
-                          text: ' *',
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
                     ),
                   ),
                   const SizedBox(height: 8),
