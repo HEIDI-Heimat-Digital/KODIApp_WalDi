@@ -8,6 +8,7 @@ import Foundation
 import audio_session
 import connectivity_macos
 import firebase_core
+import firebase_messaging
 import just_audio
 import location
 import package_info_plus
@@ -21,6 +22,7 @@ func RegisterGeneratedPlugins(registry: FlutterPluginRegistry) {
   AudioSessionPlugin.register(with: registry.registrar(forPlugin: "AudioSessionPlugin"))
   ConnectivityPlugin.register(with: registry.registrar(forPlugin: "ConnectivityPlugin"))
   FLTFirebaseCorePlugin.register(with: registry.registrar(forPlugin: "FLTFirebaseCorePlugin"))
+  FLTFirebaseMessagingPlugin.register(with: registry.registrar(forPlugin: "FLTFirebaseMessagingPlugin"))
   JustAudioPlugin.register(with: registry.registrar(forPlugin: "JustAudioPlugin"))
   LocationPlugin.register(with: registry.registrar(forPlugin: "LocationPlugin"))
   FLTPackageInfoPlusPlugin.register(with: registry.registrar(forPlugin: "FLTPackageInfoPlusPlugin"))

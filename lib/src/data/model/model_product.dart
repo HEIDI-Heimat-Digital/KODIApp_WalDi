@@ -13,7 +13,7 @@ class ProductModel {
   final int userId;
   final int? subcategoryId;
   final int? categoryId;
-  final int? cityId;
+  int? cityId;
   final int? villageId;
   final int? statusId;
   final int? sourceId;
