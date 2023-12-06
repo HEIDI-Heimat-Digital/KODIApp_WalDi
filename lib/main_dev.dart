@@ -1,6 +1,8 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:heidi/firebase_options.dart';
 import 'package:heidi/src/data/repository/list_repository.dart';
 import 'package:heidi/src/data/repository/user_repository.dart';
 import 'package:heidi/src/main_screen.dart';
@@ -35,6 +37,10 @@ Future<void> main() async {
   );
   await Hive.initFlutter();
   final prefBox = await Preferences.openBox();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   runApp(HeidiApp(prefBox));
   Bloc.observer = HeidiBlocObserver();
