@@ -53,7 +53,7 @@ class _CitiesDropDownState extends State<CitiesDropDown> {
               ),
               labelText: widget.hintText ??
                   Translate.of(context).translate('select_location'),
-              labelStyle: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color ?? Colors.white),
+              labelStyle: const TextStyle(color: Colors.white),
               border: const OutlineInputBorder(),
             ),
           ),
